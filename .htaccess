@@ -1,0 +1,17 @@
+# rules for mart.mavitech.com.ng 
+<IfModule mod_rewrite.c>
+
+Options -MultiViews
+RewriteEngine on
+
+ 
+RewriteRule ^/Error?$ 404.php
+#RewriteRule ^search/([\\?])q=([A-Za-z0-9\+\-]+)?$ search.php?search_term=$2
+RewriteRule ^product/([0-9]+)-([0-9]+)/([A-Za-z0-9\+\-]+)?$ product.php?id=$1&c=$2&p_name=$3
+RewriteRule ^category/([0-9]+)/([A-Za-z0-9\+\-]+)(?:/page-([0-9]+))?$ category.php?id=$1&cat_name=$2&p=$3
+RewriteRule ^brand/([0-9]+)-([0-9]+)/([A-Za-z0-9\+\-]+)(?:/page-([0-9]+))?$ brand.php?id=$1&c=$2&brand_name=$3&p=$4
+RewriteRule ^OS/([0-9]+)-([0-9]+)/([A-Za-z0-9\+\-]+)(?:/page-([0-9]+))?$ os.php?id=$1&c=$2&os_name=$3&p=$4
+RewriteRule ^cart/(add|remove|clear)/([0-9]+)/([A-Za-z0-9\+\-]+)?$ cart.php?id=$2&action=$1
+
+
+</IfModule>
